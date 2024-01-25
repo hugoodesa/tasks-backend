@@ -5,9 +5,14 @@ pipeline {
       jdk 'JAVA_LOCAL'
     }
     stages{
-        stage("build") {
+        stage("#1 build") {
             steps {
                 bat 'mvn clean package -DskipTests=true'
+            }
+        }
+        stage("#2 unit tests") {
+            steps {
+                bat 'mvn test'
             }
         }
     }
