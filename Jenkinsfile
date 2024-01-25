@@ -1,9 +1,9 @@
 pipeline {
     agent any 
     stages{
-        stage("#1 one") {
+        stage("build") {
             steps {
-                echo 'hellow world'
+                bat 'mvn clean package -DskipTests=true'
             }
         }
     }
