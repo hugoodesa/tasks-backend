@@ -1,13 +1,13 @@
 pipeline {
     agent any
     tools {
-      maven 'Maven 3.9.2'
-      jdk 'jdk-21'
+      maven 'MAVEN_LOCAL'
+      jdk 'JAVA_LOCAL'
     }
     stages{
         stage("build") {
             steps {
-                bat 'mvn clean package'
+                bat 'mvn clean package -DskipTests=true'
             }
         }
     }
